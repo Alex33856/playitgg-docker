@@ -1,0 +1,10 @@
+version: '3.6'
+services:
+    playit:
+      build: .
+      container_name: playit
+      image: playit
+      network_mode: host
+      volumes:
+        - ./data/:/etc/playit/
+      restart: unless-stopped
