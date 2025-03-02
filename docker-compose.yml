@@ -1,10 +1,8 @@
-version: '3.6'
 services:
-    playit:
-      build: .
-      container_name: playit
-      image: playit
-      network_mode: host
-      volumes:
-        - ./data/:/etc/playit/
-      restart: unless-stopped
+  playit:
+    build: .
+    container_name: playit
+    image: playit
+    network_mode: host
+    command: ["-s", "--secret", "<YOUR SECRET KEY>", "--platform_docker", "start"]
+    restart: unless-stopped
